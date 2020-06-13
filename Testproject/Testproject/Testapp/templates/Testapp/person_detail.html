@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'Testapp_person_list' %}">Person Listing</a></p>
+<table class="table">
+<tr><td>name_person</td><td>{{ object.name_person }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Person</a>
+
+{% endblock %}
