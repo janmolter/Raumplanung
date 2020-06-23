@@ -72,12 +72,12 @@ class RaumbelegungViewTest(unittest.TestCase):
         self.client = Client()
 
     def test_list_raumbelegung(self):
-        url = reverse('Testapp_raumbelegung_list')
+        url = reverse('app_raumbelegung_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
     def test_create_raumbelegung(self):
-        url = reverse('Testapp_raumbelegung_create')
+        url = reverse('app_raumbelegung_create')
         data = {
             "name_room": "name_room",
             "Raumbelegung_to_Person": create_person().pk,
@@ -87,7 +87,7 @@ class RaumbelegungViewTest(unittest.TestCase):
 
     def test_detail_raumbelegung(self):
         raumbelegung = create_raumbelegung()
-        url = reverse('Testapp_raumbelegung_detail', args=[raumbelegung.pk,])
+        url = reverse('app_raumbelegung_detail', args=[raumbelegung.pk,])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -97,7 +97,7 @@ class RaumbelegungViewTest(unittest.TestCase):
             "name_room": "name_room",
             "Raumbelegung_to_Person": create_person().pk,
         }
-        url = reverse('Testapp_raumbelegung_update', args=[raumbelegung.pk,])
+        url = reverse('app_raumbelegung_update', args=[raumbelegung.pk,])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -110,12 +110,12 @@ class PersonViewTest(unittest.TestCase):
         self.client = Client()
 
     def test_list_person(self):
-        url = reverse('Testapp_person_list')
+        url = reverse('app_person_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
     def test_create_person(self):
-        url = reverse('Testapp_person_create')
+        url = reverse('app_person_create')
         data = {
             "name_person": "name_person",
         }
@@ -124,7 +124,7 @@ class PersonViewTest(unittest.TestCase):
 
     def test_detail_person(self):
         person = create_person()
-        url = reverse('Testapp_person_detail', args=[person.pk,])
+        url = reverse('app_person_detail', args=[person.pk,])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -133,7 +133,7 @@ class PersonViewTest(unittest.TestCase):
         data = {
             "name_person": "name_person",
         }
-        url = reverse('Testapp_person_update', args=[person.pk,])
+        url = reverse('app_person_update', args=[person.pk,])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -146,12 +146,12 @@ class AdminViewTest(unittest.TestCase):
         self.client = Client()
 
     def test_list_admin(self):
-        url = reverse('Testapp_admin_list')
+        url = reverse('app_admin_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
     def test_create_admin(self):
-        url = reverse('Testapp_admin_create')
+        url = reverse('app_admin_create')
         data = {
             "firstname": "firstname",
             "lastname": "lastname",
@@ -162,7 +162,7 @@ class AdminViewTest(unittest.TestCase):
 
     def test_detail_admin(self):
         admin = create_admin()
-        url = reverse('Testapp_admin_detail', args=[admin.pk,])
+        url = reverse('app_admin_detail', args=[admin.pk,])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -173,7 +173,7 @@ class AdminViewTest(unittest.TestCase):
             "lastname": "lastname",
             "Admin_to_Person": create_person().pk,
         }
-        url = reverse('Testapp_admin_update', args=[admin.pk,])
+        url = reverse('app_admin_update', args=[admin.pk,])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 
@@ -186,12 +186,12 @@ class UserViewTest(unittest.TestCase):
         self.client = Client()
 
     def test_list_user(self):
-        url = reverse('Testapp_user_list')
+        url = reverse('app_user_list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
     def test_create_user(self):
-        url = reverse('Testapp_user_create')
+        url = reverse('app_user_create')
         data = {
             "firstname": "firstname",
             "lastname": "lastname",
@@ -202,7 +202,7 @@ class UserViewTest(unittest.TestCase):
 
     def test_detail_user(self):
         user = create_user()
-        url = reverse('Testapp_user_detail', args=[user.pk,])
+        url = reverse('app_user_detail', args=[user.pk,])
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
 
@@ -213,7 +213,7 @@ class UserViewTest(unittest.TestCase):
             "lastname": "lastname",
             "User_to_Person": create_person().pk,
         }
-        url = reverse('Testapp_user_update', args=[user.pk,])
+        url = reverse('app_user_update', args=[user.pk,])
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, 302)
 

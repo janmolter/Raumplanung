@@ -18,7 +18,7 @@ class Raumbelegung(models.Model):
 
     # Relationship Fields
     Raumbelegung_to_Person = models.ForeignKey(
-        'Testapp.Person',
+        'app.Person',
         on_delete=models.CASCADE, related_name="raumbelegungs", 
     )
 
@@ -29,11 +29,11 @@ class Raumbelegung(models.Model):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('Testapp_raumbelegung_detail', args=(self.pk,))
+        return reverse('app_raumbelegung_detail', args=(self.pk,))
 
 
     def get_update_url(self):
-        return reverse('Testapp_raumbelegung_update', args=(self.pk,))
+        return reverse('app_raumbelegung_update', args=(self.pk,))
 
 
 class Person(models.Model):
@@ -49,11 +49,11 @@ class Person(models.Model):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('Testapp_person_detail', args=(self.pk,))
+        return reverse('app_person_detail', args=(self.pk,))
 
 
     def get_update_url(self):
-        return reverse('Testapp_person_update', args=(self.pk,))
+        return reverse('app_person_update', args=(self.pk,))
 
 
 class Admin(models.Model):
@@ -64,7 +64,7 @@ class Admin(models.Model):
 
     # Relationship Fields
     Admin_to_Person = models.OneToOneField(
-        'Testapp.Person',
+        'app.Person',
         on_delete=models.CASCADE, related_name="admins", 
     )
 
@@ -75,11 +75,11 @@ class Admin(models.Model):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('Testapp_admin_detail', args=(self.pk,))
+        return reverse('app_admin_detail', args=(self.pk,))
 
 
     def get_update_url(self):
-        return reverse('Testapp_admin_update', args=(self.pk,))
+        return reverse('app_admin_update', args=(self.pk,))
 
 
 class User(models.Model):
@@ -90,7 +90,7 @@ class User(models.Model):
 
     # Relationship Fields
     User_to_Person = models.OneToOneField(
-        'Testapp.Person',
+        'app.Person',
         on_delete=models.CASCADE, related_name="users", 
     )
 
@@ -101,10 +101,10 @@ class User(models.Model):
         return u'%s' % self.pk
 
     def get_absolute_url(self):
-        return reverse('Testapp_user_detail', args=(self.pk,))
+        return reverse('app_user_detail', args=(self.pk,))
 
 
     def get_update_url(self):
-        return reverse('Testapp_user_update', args=(self.pk,))
+        return reverse('app_user_update', args=(self.pk,))
 
 

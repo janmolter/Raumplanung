@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'Testapp_person_list' %}">Person Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'app_person_list' %}">Person Listing</a></p>
 <table class="table">
 <tr><td>name_person</td><td>{{ object.name_person }}</td></tr>
 </table>
