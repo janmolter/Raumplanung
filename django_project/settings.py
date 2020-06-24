@@ -134,6 +134,6 @@ CHANNEL_LAYERS = {
     },
 }
 
-#INSTALLED_APPS += ['channels']
+# INSTALLED_APPS += ['channels']
 
 
