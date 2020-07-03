@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'App_user_list' %}">User Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'App_raum_list' %}">Raum Listing</a></p>
 <form method="post">
 {% csrf_token %}
 {{form|crispy}}

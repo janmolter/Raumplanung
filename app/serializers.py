@@ -3,10 +3,10 @@ from . import models
 from rest_framework import serializers
 
 
-class RaumbelegungSerializer(serializers.ModelSerializer):
+class WebseiteRaumbelegungSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = models.Raumbelegung
+        model = models.WebseiteRaumbelegung
         fields = (
             'pk', 
             'name_room', 
@@ -42,6 +42,43 @@ class UserSerializer(serializers.ModelSerializer):
             'pk', 
             'firstname', 
             'lastname', 
+        )
+
+
+class RaumSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Raum
+        fields = (
+            'pk', 
+            'Belegt', 
+            'Raumnummer', 
+            'Anzahl_Sitzplätze', 
+            'Beamer', 
+            'Whiteboard', 
+        )
+
+
+class ZeitraumSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Zeitraum
+        fields = (
+            'pk', 
+            'Datum', 
+            'Vorlesungszeit', 
+            'Dauer', 
+        )
+
+
+class RaumbelegungSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Raumbelegung
+        fields = (
+            'pk', 
+            'name', 
+            'Belegungsgrund', 
         )
 
 

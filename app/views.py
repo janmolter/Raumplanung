@@ -1,24 +1,24 @@
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
-from .models import Raumbelegung, Person, Admin, User
-from .forms import RaumbelegungForm, PersonForm, AdminForm, UserForm
+from .models import WebseiteRaumbelegung, Person, Admin, User, Raum, Zeitraum, Raumbelegung
+from .forms import WebseiteRaumbelegungForm, PersonForm, AdminForm, UserForm, RaumForm, ZeitraumForm, RaumbelegungForm
 
 
-class RaumbelegungListView(ListView):
-    model = Raumbelegung
+class WebseiteRaumbelegungListView(ListView):
+    model = WebseiteRaumbelegung
 
 
-class RaumbelegungCreateView(CreateView):
-    model = Raumbelegung
-    form_class = RaumbelegungForm
+class WebseiteRaumbelegungCreateView(CreateView):
+    model = WebseiteRaumbelegung
+    form_class = WebseiteRaumbelegungForm
 
 
-class RaumbelegungDetailView(DetailView):
-    model = Raumbelegung
+class WebseiteRaumbelegungDetailView(DetailView):
+    model = WebseiteRaumbelegung
 
 
-class RaumbelegungUpdateView(UpdateView):
-    model = Raumbelegung
-    form_class = RaumbelegungForm
+class WebseiteRaumbelegungUpdateView(UpdateView):
+    model = WebseiteRaumbelegung
+    form_class = WebseiteRaumbelegungForm
 
 
 class PersonListView(ListView):
@@ -73,4 +73,58 @@ class UserDetailView(DetailView):
 class UserUpdateView(UpdateView):
     model = User
     form_class = UserForm
+
+
+class RaumListView(ListView):
+    model = Raum
+
+
+class RaumCreateView(CreateView):
+    model = Raum
+    form_class = RaumForm
+
+
+class RaumDetailView(DetailView):
+    model = Raum
+
+
+class RaumUpdateView(UpdateView):
+    model = Raum
+    form_class = RaumForm
+
+
+class ZeitraumListView(ListView):
+    model = Zeitraum
+
+
+class ZeitraumCreateView(CreateView):
+    model = Zeitraum
+    form_class = ZeitraumForm
+
+
+class ZeitraumDetailView(DetailView):
+    model = Zeitraum
+
+
+class ZeitraumUpdateView(UpdateView):
+    model = Zeitraum
+    form_class = ZeitraumForm
+
+
+class RaumbelegungListView(ListView):
+    model = Raumbelegung
+
+
+class RaumbelegungCreateView(CreateView):
+    model = Raumbelegung
+    form_class = RaumbelegungForm
+
+
+class RaumbelegungDetailView(DetailView):
+    model = Raumbelegung
+
+
+class RaumbelegungUpdateView(UpdateView):
+    model = Raumbelegung
+    form_class = RaumbelegungForm
 

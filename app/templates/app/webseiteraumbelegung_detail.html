@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'App_webseiteraumbelegung_list' %}">WebseiteRaumbelegung Listing</a></p>
+<table class="table">
+<tr><td>name_room</td><td>{{ object.name_room }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit WebseiteRaumbelegung</a>
+
+{% endblock %}
