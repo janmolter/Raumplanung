@@ -71,8 +71,8 @@ class RaumAdminForm(forms.ModelForm):
 
 class RaumAdmin(admin.ModelAdmin):
     form = RaumAdminForm
-    list_display = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplätze', 'Beamer', 'Whiteboard']
-    readonly_fields = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplätze', 'Beamer', 'Whiteboard']
+    list_display = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard']
+    readonly_fields = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard']
 
 admin.site.register(Raum, RaumAdmin)
 
