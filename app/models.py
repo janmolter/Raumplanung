@@ -22,11 +22,11 @@ class WebseiteRaumbelegung(models.Model):
 
     # Relationship Fields
     Websiteraumbelegung_to_Person = models.ForeignKey(
-        'App.Person',
+        'Person',
         on_delete=models.CASCADE, related_name="webseiteraumbelegungs", 
     )
     Webseiteraumbelegung_to_Raum = models.ForeignKey(
-        'App.Raum',
+        'Raum',
         on_delete=models.CASCADE, related_name="webseiteraumbelegungs", 
     )
 
@@ -51,8 +51,8 @@ class Person(models.Model):
 
     # Relationship Fields
     Person_to_Admin = models.OneToOneField(
-        'App.Admin',
-        on_delete=models.CASCADE, related_name="persons", 
+        'Admin',
+        on_delete=models.CASCADE, related_name="persons", null=True 
     )
 
     class Meta:
@@ -77,19 +77,19 @@ class Admin(models.Model):
 
     # Relationship Fields
     Admin_to_Person = models.OneToOneField(
-        'App.Person',
-        on_delete=models.CASCADE, related_name="admins", 
+        'Person',
+        on_delete=models.CASCADE, related_name="admins", null=True
     )
     Admin_to_User = models.ManyToManyField(
-        'App.User',
+        'User',
         related_name="admins", 
     )
     Admin_to_Raum = models.ManyToManyField(
-        'App.Raum',
+        'Raum',
         related_name="admins", 
     )
     Admin_to_Raumbelegung = models.ManyToManyField(
-        'App.Raumbelegung',
+        'Raumbelegung',
         related_name="admins", 
     )
 
@@ -115,16 +115,16 @@ class User(models.Model):
 
     # Relationship Fields
     User_to_Person = models.OneToOneField(
-        'App.Person',
-        on_delete=models.CASCADE, related_name="users", 
+        'Person',
+        on_delete=models.CASCADE, related_name="users", null=True
     )
     User_to_admin = models.ManyToManyField(
-        'App.Admin',
+        'Admin',
         related_name="users", 
     )
     User_to_Raumbelegung = models.OneToOneField(
-        'App.Raumbelegung',
-        on_delete=models.CASCADE, related_name="users", 
+        'Raumbelegung',
+        on_delete=models.CASCADE, related_name="users", null=True
     )
 
     class Meta:
@@ -145,26 +145,26 @@ class Raum(models.Model):
 
     # Fields
     Belegt = models.BooleanField()
-    Raumnummer = models.CharField()
+    Raumnummer = models.CharField(max_length=100)
     Anzahl_Sitzplaetze = models.IntegerField()
     Beamer = models.BooleanField()
     Whiteboard = models.BooleanField()
 
     # Relationship Fields
     Raum_to_Admin = models.ManyToManyField(
-        'App.Admin',
+        'Admin',
         related_name="raums", 
     )
     Raum_to_user = models.ForeignKey(
-        'App.User',
+        'User',
         on_delete=models.CASCADE, related_name="raums", 
     )
     Raum_to_Zeitraum = models.ForeignKey(
-        'App.Zeitraum',
+        'Zeitraum',
         on_delete=models.CASCADE, related_name="raums", 
     )
     Raum_to_Raumbelegung = models.ForeignKey(
-        'App.Raumbelegung',
+        'Raumbelegung',
         on_delete=models.CASCADE, related_name="raums", 
     )
 
@@ -191,7 +191,7 @@ class Zeitraum(models.Model):
 
     # Relationship Fields
     Zeitraum_to_Raumbelegung = models.OneToOneField(
-        'App.Raumbelegung',
+        'Raumbelegung',
         on_delete=models.CASCADE, related_name="zeitraums", 
     )
 
@@ -212,21 +212,21 @@ class Zeitraum(models.Model):
 class Raumbelegung(models.Model):
 
     # Fields
-    name = models.CharField(max_length=30)
-    Belegungsgrund = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, null=True)
+    Belegungsgrund = models.CharField(max_length=30, null=True)
 
     # Relationship Fields
     Raumbelegung_to_Zeitraum = models.OneToOneField(
-        'App.Zeitraum',
-        on_delete=models.CASCADE, related_name="raumbelegungs", 
+        'Zeitraum',
+        on_delete=models.CASCADE, related_name="raumbelegungs", null=True 
     )
     Raumbelegung_to_Admin = models.ManyToManyField(
-        'App.Admin',
+        'Admin',
         related_name="raumbelegungs", 
     )
     Raumbelegung_to_user = models.OneToOneField(
-        'App.User',
-        on_delete=models.CASCADE, related_name="raumbelegungs", 
+        'User',
+        on_delete=models.CASCADE, related_name="raumbelegungs", null=True 
     )
 
     class Meta:

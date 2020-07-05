@@ -82,7 +82,7 @@ def create_raum(**kwargs):
     defaults = {}
     defaults["Belegt"] = "Belegt"
     defaults["Raumnummer"] = "Raumnummer"
-    defaults["Anzahl_Sitzplätze"] = "Anzahl_Sitzplätze"
+    defaults["Anzahl_Sitzplaetze"] = "Anzahl_Sitzplaetze"
     defaults["Beamer"] = "Beamer"
     defaults["Whiteboard"] = "Whiteboard"
     defaults.update(**kwargs)
@@ -307,7 +307,7 @@ class RaumViewTest(unittest.TestCase):
         data = {
             "Belegt": "Belegt",
             "Raumnummer": "Raumnummer",
-            "Anzahl_Sitzplätze": "Anzahl_Sitzplätze",
+            "Anzahl_Sitzplaetze": "Anzahl_Sitzplaetze",
             "Beamer": "Beamer",
             "Whiteboard": "Whiteboard",
             "Raum_to_Admin": create_admin().pk,
@@ -329,7 +329,7 @@ class RaumViewTest(unittest.TestCase):
         data = {
             "Belegt": "Belegt",
             "Raumnummer": "Raumnummer",
-            "Anzahl_Sitzplätze": "Anzahl_Sitzplätze",
+            "Anzahl_Sitzplaetze": "Anzahl_Sitzplaetze",
             "Beamer": "Beamer",
             "Whiteboard": "Whiteboard",
             "Raum_to_Admin": create_admin().pk,

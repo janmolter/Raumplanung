@@ -53,7 +53,7 @@ class RaumSerializer(serializers.ModelSerializer):
             'pk', 
             'Belegt', 
             'Raumnummer', 
-            'Anzahl_Sitzplätze', 
+            'Anzahl_Sitzplaetze', 
             'Beamer', 
             'Whiteboard', 
         )

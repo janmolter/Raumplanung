@@ -29,7 +29,7 @@ class UserForm(forms.ModelForm):
 class RaumForm(forms.ModelForm):
     class Meta:
         model = Raum
-        fields = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplätze', 'Beamer', 'Whiteboard', 'Raum_to_Admin', 'Raum_to_user', 'Raum_to_Zeitraum', 'Raum_to_Raumbelegung']
+        fields = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard', 'Raum_to_Admin', 'Raum_to_user', 'Raum_to_Zeitraum', 'Raum_to_Raumbelegung']
 
 
 class ZeitraumForm(forms.ModelForm):
