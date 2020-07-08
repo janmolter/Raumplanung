@@ -1,7 +1,12 @@
 from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from .models import WebseiteRaumbelegung, Person, Admin, User, Raum, Zeitraum, Raumbelegung
 from .forms import WebseiteRaumbelegungForm, PersonForm, AdminForm, UserForm, RaumForm, ZeitraumForm, RaumbelegungForm
+from django.http import HttpResponse
 
+
+def index(request):
+    return HttpResponse("Hier wäre dann die Startseite")
+ 
 
 class WebseiteRaumbelegungListView(ListView):
     model = WebseiteRaumbelegung
