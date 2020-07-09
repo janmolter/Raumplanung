@@ -30,6 +30,7 @@ router.register('raumbelegung', api.RaumbelegungViewSet)
 urlpatterns = (
     # urls for Django Rest Framework API
     path('api/v1/', include(router.urls)),
+    path('', views.home_view, name='home')
 )
 
 urlpatterns += (
@@ -46,6 +47,7 @@ urlpatterns += (
     path('app/person/create/', views.PersonCreateView.as_view(), name='app_person_create'),
     path('app/person/detail/<int:pk>/', views.PersonDetailView.as_view(), name='app_person_detail'),
     path('app/person/update/<int:pk>/', views.PersonUpdateView.as_view(), name='app_person_update'),
+
 )
 
 urlpatterns += (
@@ -86,8 +88,4 @@ urlpatterns += (
     path('app/raumbelegung/create/', views.RaumbelegungCreateView.as_view(), name='app_raumbelegung_create'),
     path('app/raumbelegung/detail/<int:pk>/', views.RaumbelegungDetailView.as_view(), name='app_raumbelegung_detail'),
     path('app/raumbelegung/update/<int:pk>/', views.RaumbelegungUpdateView.as_view(), name='app_raumbelegung_update'),
-)
-
-urlpatterns = (
-    path('', views.index, name='index'),
 )

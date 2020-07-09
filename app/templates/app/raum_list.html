@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'App_raum_list' %}">Raum Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'app_raum_list' %}">Raum Listing</a></p>
 <table class="table">
 <tr>
 <td>ID</td><td>Link</td>
@@ -22,5 +22,5 @@
     <td>{{ object.Whiteboard }}</td>
 </tr>
 {% endfor %}
-</table><a class="btn btn-primary" href="{% url 'App_raum_create' %}">Create new Raum</a>
+</table><a class="btn btn-primary" href="{% url 'app_raum_create' %}">Create new Raum</a>
 {% endblock %}

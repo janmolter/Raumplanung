@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'App_admin_list' %}">Admin Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'app_admin_list' %}">Admin Listing</a></p>
 <table class="table">
 <tr>
 <td>ID</td><td>Link</td>
@@ -16,5 +16,5 @@
     <td>{{ object.lastname }}</td>
 </tr>
 {% endfor %}
-</table><a class="btn btn-primary" href="{% url 'App_admin_create' %}">Create new Admin</a>
+</table><a class="btn btn-primary" href="{% url 'app_admin_create' %}">Create new Admin</a>
 {% endblock %}

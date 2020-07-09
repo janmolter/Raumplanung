@@ -2,10 +2,11 @@ from django.views.generic import DetailView, ListView, UpdateView, CreateView
 from .models import WebseiteRaumbelegung, Person, Admin, User, Raum, Zeitraum, Raumbelegung
 from .forms import WebseiteRaumbelegungForm, PersonForm, AdminForm, UserForm, RaumForm, ZeitraumForm, RaumbelegungForm
 from django.http import HttpResponse
+from django.shortcuts import render
 
-
-def index(request):
-    return HttpResponse("Hier wäre dann die Startseite")
+def home_view (request,*args,**kwargs):
+    #return HttpResponse("<h1>Hello World</h1>")
+    return render(request,"home.html",{})
  
 
 class WebseiteRaumbelegungListView(ListView):

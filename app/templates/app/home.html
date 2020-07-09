@@ -1,0 +1,29 @@
+<h1>Raumplanung Startseite</h1>
+
+    <div class="Startseite">
+       <a href="/">Home</a>
+    </div>
+
+    <div class="Kalender">
+       <a href="/">Kalender</a>
+    </div>
+
+    <div class="Raumbelegung">
+       <a href="/app/app/webseiteraumbelegung/">Raumbelegung</a>
+    </div>
+
+    <div class="Benutzer">
+      <a href="/app/api/v1">Benutzer</a>
+    </div>
+
+    <div class="Admin_login">
+      <a href="/admin">Admin login</a>
+    </div>
+
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+
+    {% endfor %}
+{% endblock %}
