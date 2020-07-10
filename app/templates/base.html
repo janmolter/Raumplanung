@@ -4,7 +4,21 @@
 
 
 <head>
-	
+
+
+{% block head %}
+
+<h1>Hier den Titel eintragen</h1>
+{% endblock %}
+
+
+
+
+
+
+
+
+<center><img src="{% static '/images/jpg3.jpg' %}" width="1865" height="339"></center>
 <link rel="stylesheet" href="{% static '/css/navi.css' %}">
 
 </head>
@@ -13,15 +27,14 @@
 
 <nav>
 	<ul>
-		<img src="{% static '/images/jpg2.jpg' %}" width="96,8" height="36,8">
 		<li><a href="/app/app/webseiteraumbelegung/">Webseiteraumbelegung</a></li>	
 		<li><a href="/app/api/v1">Api</a></li>
 		<li><a href="/admin/">Admin</a></li>
 	</ul>
 </nav>
 
-
 <body>
+
 {% block content %}
 
 

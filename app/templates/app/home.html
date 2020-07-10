@@ -1,31 +1,34 @@
-<h1>Raumplanung Startseite</h1>
-
 
 {% extends 'base.html' %}
 
-{% block content %}
+{% block head %}
 
+<center><h1>Raumplanung Startseite</h1></center>
+
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+       
+    }
+    div {
+        height: 200px;
+        margin: 20px;
+        border: 2px solid;
+        background-color: #FFA500;
+    }
+</style>
 
 
     <div class="Startseite">
        <a href="/">Home</a>
-    </div>
-
-    <div class="Kalender">
        <a href="/">Kalender</a>
-    </div>
-
-    <div class="Raumbelegung">
        <a href="/app/app/webseiteraumbelegung/">Raumbelegung</a>
+       <a href="/app/api/v1">Benutzer</a>
+       <a href="/admin">Admin login</a>
     </div>
 
-    <div class="Benutzer">
-      <a href="/app/api/v1">Benutzer</a>
-    </div>
-
-    <div class="Admin_login">
-      <a href="/admin">Admin login</a>
-    </div>
 
 
 {% endblock %}
