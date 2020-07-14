@@ -1,66 +1,6 @@
 from django.contrib import admin
 from django import forms
-from .models import WebseiteRaumbelegung, Person, Admin, User, Raum, Zeitraum, Raumbelegung
-
-class WebseiteRaumbelegungAdminForm(forms.ModelForm):
-
-    class Meta:
-        model = WebseiteRaumbelegung
-        fields = '__all__'
-
-
-class WebseiteRaumbelegungAdmin(admin.ModelAdmin):
-    form = WebseiteRaumbelegungAdminForm
-    list_display = ['name_room']
-    readonly_fields = ['name_room']
-
-admin.site.register(WebseiteRaumbelegung, WebseiteRaumbelegungAdmin)
-
-
-class PersonAdminForm(forms.ModelForm):
-
-    class Meta:
-        model = Person
-        fields = '__all__'
-
-
-class PersonAdmin(admin.ModelAdmin):
-    form = PersonAdminForm
-    list_display = ['name_person']
-    readonly_fields = ['name_person']
-
-admin.site.register(Person, PersonAdmin)
-
-
-class AdminAdminForm(forms.ModelForm):
-
-    class Meta:
-        model = Admin
-        fields = '__all__'
-
-
-class AdminAdmin(admin.ModelAdmin):
-    form = AdminAdminForm
-    list_display = ['firstname', 'lastname']
-    readonly_fields = ['firstname', 'lastname']
-
-admin.site.register(Admin, AdminAdmin)
-
-
-class UserAdminForm(forms.ModelForm):
-
-    class Meta:
-        model = User
-        fields = '__all__'
-
-
-class UserAdmin(admin.ModelAdmin):
-    form = UserAdminForm
-    list_display = ['firstname', 'lastname']
-    readonly_fields = ['firstname', 'lastname']
-
-admin.site.register(User, UserAdmin)
-
+from .models import Raum, Zeitraum, Raumbelegung
 
 class RaumAdminForm(forms.ModelForm):
 
@@ -71,8 +11,8 @@ class RaumAdminForm(forms.ModelForm):
 
 class RaumAdmin(admin.ModelAdmin):
     form = RaumAdminForm
-    list_display = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard']
-    readonly_fields = ['Belegt', 'Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard']
+    list_display = ['Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard']
+    readonly_fields = ['Raumnummer', 'Anzahl_Sitzplaetze', 'Beamer', 'Whiteboard']
 
 admin.site.register(Raum, RaumAdmin)
 
@@ -101,8 +41,8 @@ class RaumbelegungAdminForm(forms.ModelForm):
 
 class RaumbelegungAdmin(admin.ModelAdmin):
     form = RaumbelegungAdminForm
-    list_display = ['name', 'Belegungsgrund']
-    readonly_fields = ['name', 'Belegungsgrund']
+    list_display = ['Belegungsgrund', 'Belegt']
+    readonly_fields = ['Belegungsgrund', 'Belegt']
 
 admin.site.register(Raumbelegung, RaumbelegungAdmin)
 

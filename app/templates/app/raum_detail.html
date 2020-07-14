@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'app_raum_list' %}">Raum Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'App_raum_list' %}">Raum Listing</a></p>
 <table class="table">
-<tr><td>Belegt</td><td>{{ object.Belegt }}</td></tr>
 <tr><td>Raumnummer</td><td>{{ object.Raumnummer }}</td></tr>
 <tr><td>Anzahl_Sitzplaetze</td><td>{{ object.Anzahl_Sitzplaetze }}</td></tr>
 <tr><td>Beamer</td><td>{{ object.Beamer }}</td></tr>

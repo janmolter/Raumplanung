@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'app_raumbelegung_list' %}">Raumbelegung Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'App_raumbelegung_list' %}">Raumbelegung Listing</a></p>
 <table class="table">
 <tr>
 <td>ID</td><td>Link</td>
-    <td>name</td>
     <td>Belegungsgrund</td>
+    <td>Belegt</td>
 </tr>
 {% for object in object_list %}
 <tr>
     <td>{{object.pk}}</td>
     <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
-    <td>{{ object.name }}</td>
     <td>{{ object.Belegungsgrund }}</td>
+    <td>{{ object.Belegt }}</td>
 </tr>
 {% endfor %}
-</table><a class="btn btn-primary" href="{% url 'app_raumbelegung_create' %}">Create new Raumbelegung</a>
+</table><a class="btn btn-primary" href="{% url 'App_raumbelegung_create' %}">Create new Raumbelegung</a>
 {% endblock %}

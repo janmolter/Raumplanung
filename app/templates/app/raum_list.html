@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p><a class="btn btn-default" href="{% url 'app_raum_list' %}">Raum Listing</a></p>
+<p><a class="btn btn-default" href="{% url 'App_raum_list' %}">Raum Listing</a></p>
 <table class="table">
 <tr>
 <td>ID</td><td>Link</td>
-    <td>Belegt</td>
     <td>Raumnummer</td>
     <td>Anzahl_Sitzplaetze</td>
     <td>Beamer</td>
@@ -15,12 +14,11 @@
 <tr>
     <td>{{object.pk}}</td>
     <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
-    <td>{{ object.Belegt }}</td>
     <td>{{ object.Raumnummer }}</td>
     <td>{{ object.Anzahl_Sitzplaetze }}</td>
     <td>{{ object.Beamer }}</td>
     <td>{{ object.Whiteboard }}</td>
 </tr>
 {% endfor %}
-</table><a class="btn btn-primary" href="{% url 'app_raum_create' %}">Create new Raum</a>
+</table><a class="btn btn-primary" href="{% url 'App_raum_create' %}">Create new Raum</a>
 {% endblock %}
