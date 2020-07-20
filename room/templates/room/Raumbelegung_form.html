@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'room_Raumbelegung_list' %}">
+    Raumbelegung Listing
+    </a>
+</p>
+    
+<form method="post">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Belegt">Belegt: </label>
+  <input class="form-control col-sm-10" id="Belegt" type="text" name="Belegt" value="{{ object.Belegt }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Belegungsgrund">Belegungsgrund: </label>
+  <input class="form-control col-sm-10" id="Belegungsgrund" type="text" name="Belegungsgrund" value="{{ object.Belegungsgrund }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

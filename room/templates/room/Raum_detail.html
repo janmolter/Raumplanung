@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'room_Raum_list' %}">
+    Raum Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Raumnummer</td><td>{{ object.Raumnummer }}</td></tr>
+    <tr><td>Anzahl_Sitzplaetze</td><td>{{ object.Anzahl_Sitzplaetze }}</td></tr>
+    <tr><td>Beamer</td><td>{{ object.Beamer }}</td></tr>
+    <tr><td>Whiteboard</td><td>{{ object.Whiteboard }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

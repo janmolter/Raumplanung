@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'room_Zeitraum_list' %}">
+    Zeitraum Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Vorlesungszeit</td><td>{{ object.Vorlesungszeit }}</td></tr>
+    <tr><td>EndTime</td><td>{{ object.EndTime }}</td></tr>
+    <tr><td>Datum</td><td>{{ object.Datum }}</td></tr>
+    <tr><td>StartTime</td><td>{{ object.StartTime }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

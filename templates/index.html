@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>room</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raum_list' %}">Raum Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Zeitraum_list' %}">Zeitraum Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raumbelegung_list' %}">Raumbelegung Listing</a></div>
+{% endblock %}
