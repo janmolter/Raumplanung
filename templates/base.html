@@ -1,20 +1,193 @@
-{% load static %}
-<html>
-  <head>
-    <title>Django Builder - django_project</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <div id="content" class="container">
-      <h2>Home: <a href="{% url 'index' %}">django_project</a></h2>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Your Apps</h5>
-          <p class="card-text">{% block content %}{% endblock %}</p>
-        </div>
-      </div>
-    </div>
+
+
+<!-- Der neue HTML Doctype ist der einfachste Doctype den es je gab.-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Auch das meta-Tag zum Zeichensatz wurde vereinfacht.-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        * {
+            color: #999999;
+            font-size: 20px;
+            font-weight: 400;
+            box-sizing: border-box;
+            font-family: 'Monteserat', Arial, sans-serif;
+        }
+ 
+        header,
+        section,
+        aside,
+        footer {
+            text-align: center;
+            border-radius: 7px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+ 
+        header {
+            width: 100%;
+            margin: 25px 25px 25px 25px;
+            display: inline-block;
+        }
+ 
+        aside {
+            width: 25% ;
+            float: left;
+            min-height: 517px;
+        }
+ 
+        section {
+            float: right;
+            width: calc(75% - 75px);
+            margin: 0 25px 25px 25px; 
+            background-color: #81BEF7;           
+        }
+ 
+        section header,
+        section article,
+        section footer {
+            width: 100%;
+            border-radius: 7px;
+            border: 1px solid #e5e5e5;
+            box-shadow: none;
+            margin: 25px 0px 0px 0px;
+            padding: 50px;
+        }
+ 
+        footer {
+            width: 96.5%;
+            margin: 25px 25px 0px 25px;
+            clear: both;
+        }
+
+nav a {
+      display: block;
+      padding: 0.4em;
+      text-decoration: none; 
+      font-weight: bold;
+      border: 1px solid darkblue;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px white inset;
+      color: gold; 
+      background-color: darkblue; 
+      transition: all .25s ease-in;   
+    }
+
+  nav li[aria-current] a {
+  background-color: firebrick; 
+    color: gold;
+  }
   
-  </body>
+    nav a:focus,
+    nav a:hover,
+    nav li[aria-current] a:focus,
+    nav li[aria-current] a:hover {    
+      color: darkblue; 
+      background-color: gold;
+    }
+
+
+
+
+nav ul {
+
+  display: flex;
+  flex-direction: column;
+} 
+
+nav li {
+  list-style: none;
+  margin: 0.5em;
+  padding: 0;
+  font-size: 1.5em;  
+}
+
+
+
+
+@media (min-width: 75em) {
+  nav ul {
+
+    flex-direction: column;
+  }
+  nav li {
+    font-size: 1em;
+
+  }  
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<main>
+  <header>
+{% block head %}
+
+<h1>Hier den Titel eintragen</h1>
+{% endblock %}
+
+  </header>
+ 
+  <section>
+
+    <header>
+{% block header %}
+
+
+
+{% endblock %}
+  </header> <!-- Du Überschrift des Website-Abschnitts -->
+    <article>     
+{% block content %}
+
+
+
+{% endblock %}
+    </article> <!-- Der Inhalt des Website-Abschnitts -->
+    <footer>
+{% block end %}
+
+
+
+{% endblock %}
+    </footer> <!-- Der Schlussteil des Website-Abschnitts -->
+  </section>
+ 
+  <aside>
+{% block Side %}
+<nav>
+  <ul>
+    
+    <li><a href="/admin/">Startseite</a></li> 
+    <li><a href="/admin/">Buchen</a></li>
+    <li><a href="/admin/">Kalender</a></li>
+    <li><a href="/admin/">Suche</a></li>    
+  </ul>
+</nav>
+
+
+{% endblock %} <!-- Eine Seitenleiste -->
+  </aside>
+ 
+  <footer>
+{% block footer %}
+
+
+
+{% endblock %} <!-- Der Fußbereich -->
+  </footer>
+</main>   
+</body>
 </html>
+
