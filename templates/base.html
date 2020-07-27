@@ -1,5 +1,5 @@
 
-
+{% load static %}
 <!-- Der neue HTML Doctype ist der einfachste Doctype den es je gab.-->
 <!DOCTYPE html>
 <html lang="de">
@@ -11,7 +11,7 @@
 
     <style>
         * {
-            color: #999999;
+            color: #000000;
             font-size: 20px;
             font-weight: 400;
             box-sizing: border-box;
@@ -29,9 +29,18 @@
         }
  
         header {
+            color: #FFFFFF;
+            font-size: 100px;
             width: 100%;
             margin: 25px 25px 25px 25px;
             display: inline-block;
+                          background-image: url("static/images/jpg3.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 200px; /* You must set a specified height */
+  background-position: bottom; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+
         }
  
         aside {
@@ -41,10 +50,11 @@
         }
  
         section {
+
             float: right;
             width: calc(75% - 75px);
             margin: 0 25px 25px 25px; 
-            background-color: #81BEF7;           
+            background-color: #81BEF7;          
         }
  
         section header,
@@ -132,22 +142,21 @@ nav li {
 <body>
 <main>
   <header>
+
+
+
+
 {% block head %}
 
 <h1>Hier den Titel eintragen</h1>
 {% endblock %}
 
+
   </header>
  
   <section>
 
-    <header>
-{% block header %}
 
-
-
-{% endblock %}
-  </header> <!-- Du Überschrift des Website-Abschnitts -->
     <article>     
 {% block content %}
 
