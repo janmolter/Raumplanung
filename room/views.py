@@ -64,3 +64,5 @@ class RaumbelegungUpdateView(generic.UpdateView):
     model = models.Raumbelegung
     form_class = forms.RaumbelegungForm
     pk_url_kwarg = "pk"
+
+

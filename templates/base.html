@@ -34,7 +34,7 @@
             width: 100%;
             margin: 25px 25px 25px 25px;
             display: inline-block;
-                          background-image: url("static/images/jpg3.png"); /* The image used */
+                          background-image: url("{% static "images/jpg3.png" %}"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 200px; /* You must set a specified height */
   background-position: bottom; /* Center the image */
@@ -178,10 +178,10 @@ nav li {
 <nav>
   <ul>
     
-    <li><a href="/admin/">Startseite</a></li> 
-    <li><a href="/admin/">Buchen</a></li>
-    <li><a href="/admin/">Kalender</a></li>
-    <li><a href="/admin/">Suche</a></li>    
+    <li><a href="/Startseite">Startseite</a></li> 
+    <li><a href="/room/room/buchen">Buchen</a></li>
+    <li><a href="/room/room/Kalender">Kalender</a></li>
+    <li><a href="/room/room/suchen">Suche</a></li>    
   </ul>
 </nav>
 

@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-
+from django.views.generic import TemplateView
 from . import api
 from . import views
 
@@ -24,4 +24,9 @@ urlpatterns = (
     path("room/Raumbelegung/create/", views.RaumbelegungCreateView.as_view(), name="room_Raumbelegung_create"),
     path("room/Raumbelegung/detail/<int:pk>/", views.RaumbelegungDetailView.as_view(), name="room_Raumbelegung_detail"),
     path("room/Raumbelegung/update/<int:pk>/", views.RaumbelegungUpdateView.as_view(), name="room_Raumbelegung_update"),
+    
+    path("room/buchen/",TemplateView.as_view(template_name='booking.html'), name='booking'),
+    path("room/Kalender/",TemplateView.as_view(template_name='calender.html'), name='calender'), 
+    path("room/suchen/",TemplateView.as_view(template_name='search.html'), name='search'),
+
 )
