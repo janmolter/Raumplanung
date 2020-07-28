@@ -177,11 +177,18 @@ nav li {
 {% block Side %}
 <nav>
   <ul>
-    
+    {% if user.is_authenticated %}
+    <li><a href="/logout">Logout</a></li>
     <li><a href="/Startseite">Startseite</a></li> 
     <li><a href="/room/room/buchen">Buchen</a></li>
     <li><a href="/room/room/Kalender">Kalender</a></li>
-    <li><a href="/room/room/suchen">Suche</a></li>    
+    <li><a href="/room/room/suchen">Suche</a></li>  
+    {% else %}
+    <li><a href="/login">Login</a></li>
+    <li><a href="/Startseite">Startseite</a></li> 
+    {% endif %}
+
+  
   </ul>
 </nav>
 
