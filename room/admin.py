@@ -20,10 +20,7 @@ class RaumAdmin(admin.ModelAdmin):
         "Whiteboard",
     ]
     readonly_fields = [
-        "Raumnummer",
-        "Anzahl_Sitzplaetze",
-        "Beamer",
-        "Whiteboard",
+
     ]
 
 
@@ -69,6 +66,32 @@ class RaumbelegungAdmin(admin.ModelAdmin):
     ]
 
 
+
+
+class BuchungsAdminForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Buchung
+        fields = "__all__"
+
+
+class BuchungsAdmin(admin.ModelAdmin):
+    form = BuchungsAdminForm
+    list_display = [
+    "user",
+    "room",
+    "get_check_in",
+    ]
+    readonly_fields = [
+
+    ]
+    def get_check_in(self, obj):
+        return "\n".join([p.check_in for p in obj.check_in.all()])    
+
+
+
+
 admin.site.register(models.Raum, RaumAdmin)
 admin.site.register(models.Zeitraum, ZeitraumAdmin)
 admin.site.register(models.Raumbelegung, RaumbelegungAdmin)
+admin.site.register(models.Buchung, BuchungsAdmin)

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'room',
+    'django_filters',
 ]
 
 

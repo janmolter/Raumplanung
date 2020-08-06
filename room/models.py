@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from django.conf import settings
 
 class Raum(models.Model):
 
@@ -14,7 +14,7 @@ class Raum(models.Model):
         pass
 
     def __str__(self):
-        return str(self.pk)
+        return f'Raum {self.Raumnummer} mit {self.Anzahl_Sitzplaetze} Sitzplätzen'
 
     def get_absolute_url(self):
         return reverse("room_Raum_detail", args=(self.pk,))
@@ -56,8 +56,24 @@ class Raumbelegung(models.Model):
     def __str__(self):
         return str(self.pk)
 
+
     def get_absolute_url(self):
         return reverse("room_Raumbelegung_detail", args=(self.pk,))
 
     def get_update_url(self):
         return reverse("room_Raumbelegung_update", args=(self.pk,))
+
+
+class Buchung(models.Model):
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
+    room = models.ForeignKey(Raum, on_delete = models.CASCADE)
+    check_in = models.ManyToManyField(Zeitraum)
+   
+   
+    class Meta:
+        pass
+
+    def __str__(self):
+        return f'{self.user} hat {self.room} von {self.check_in} bis  gebucht'
+

@@ -11,7 +11,7 @@ from django.utils.decorators import method_decorator
 class RaumListView(generic.ListView):
     model = models.Raum
     form_class = forms.RaumForm
-
+    
 @method_decorator(login_required(login_url='/login/'),name='dispatch')
 class RaumCreateView(generic.CreateView):
     model = models.Raum
@@ -70,4 +70,32 @@ class RaumbelegungUpdateView(generic.UpdateView):
     form_class = forms.RaumbelegungForm
     pk_url_kwarg = "pk"
 
+
+
+
+
+
+
+
+
+@method_decorator(login_required(login_url='/login/'),name='dispatch')
+class BuchungListView(generic.ListView):
+    model = models.Buchung
+    form_class = forms.BuchungForm
+
+@method_decorator(login_required(login_url='/login/'),name='dispatch')
+class BuchungCreateView(generic.CreateView):
+    model = models.Buchung
+    form_class = forms.BuchungForm
+
+@method_decorator(login_required(login_url='/login/'),name='dispatch')
+class BuchungDetailView(generic.DetailView):
+    model = models.Buchung
+    form_class = forms.BuchungForm
+
+@method_decorator(login_required(login_url='/login/'),name='dispatch')
+class BuchungUpdateView(generic.UpdateView):
+    model = models.Buchung
+    form_class = forms.BuchungForm
+    pk_url_kwarg = "pk"
 

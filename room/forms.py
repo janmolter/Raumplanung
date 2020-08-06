@@ -31,3 +31,8 @@ class RaumbelegungForm(forms.ModelForm):
             "Belegt",
             "Belegungsgrund",
         ]
+
+class BuchungForm(forms.ModelForm):
+    class Meta:
+        model = models.Buchung
+        fields = "__all__"

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'room_Buchen_list' %}">
+    Alle Buchungen
+    </a>
+</p>
+    
+<form method="post">
+  {% csrf_token %}
+  {{form.errors}}
+
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label"for="room">Raum auswählen:</label>
+<select class="form-control col-sm-10" id="room" name="room">
+  <option value="A-1-05">A-1-05</option>
+  <option value="A-1-01">A-1-01</option>
+  <option value="B-1-02">B-1-02</option>
+  <option value="E-1-05">E-1-05</option>
+</select> 
+  </div>
+
+
+
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}
