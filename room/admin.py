@@ -20,10 +20,7 @@ class RaumAdmin(admin.ModelAdmin):
         "Whiteboard",
     ]
     readonly_fields = [
-        "Raumnummer",
-        "Anzahl_Sitzplaetze",
-        "Beamer",
-        "Whiteboard",
+       
     ]
 
 

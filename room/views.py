@@ -3,7 +3,7 @@ from . import models
 from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
-
+from .filters import RaumFilter
 
 
 
@@ -11,6 +11,12 @@ from django.shortcuts import render, redirect
 class RaumListView(generic.ListView):
     model = models.Raum
     form_class = forms.RaumForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = SnippetFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
 
 
 class RaumCreateView(generic.CreateView):
