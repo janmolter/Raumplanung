@@ -77,3 +77,7 @@ class Buchung(models.Model):
     def __str__(self):
         return f'{self.user} hat {self.room} von {self.check_in} bis  gebucht'
 
+    def get_absolute_url(self):
+        return reverse("room_Buchen_detail", args=(self.pk,))
+
+

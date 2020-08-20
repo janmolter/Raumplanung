@@ -39,12 +39,7 @@ class ZeitraumAdmin(admin.ModelAdmin):
         "Datum",
         "StartTime",
     ]
-    readonly_fields = [
-        "Vorlesungszeit",
-        "EndTime",
-        "Datum",
-        "StartTime",
-    ]
+    
 
 
 class RaumbelegungAdminForm(forms.ModelForm):
@@ -86,7 +81,7 @@ class BuchungsAdmin(admin.ModelAdmin):
 
     ]
     def get_check_in(self, obj):
-        return "\n".join([p.check_in for p in obj.check_in.all()])    
+        return "\n".join([str(p) for p in obj.check_in.all()])    
 
 
 

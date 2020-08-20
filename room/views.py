@@ -73,11 +73,6 @@ class RaumbelegungUpdateView(generic.UpdateView):
 
 
 
-
-
-
-
-
 @method_decorator(login_required(login_url='/login/'),name='dispatch')
 class BuchungListView(generic.ListView):
     model = models.Buchung
