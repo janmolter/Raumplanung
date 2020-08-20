@@ -4,6 +4,7 @@ from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from .filters import RaumFilter
+from django_filters.views import FilterView
 
 
 
@@ -14,9 +15,12 @@ class RaumListView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['filter'] = SnippetFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = RaumFilter(self.request.GET, queryset=self.get_queryset())
         return context
 
+class RaumSearchResultView(FilterView):
+    model = models.Raum
+    template_name = "room/Raum_list.html"
 
 
 class RaumCreateView(generic.CreateView):
@@ -75,5 +79,11 @@ class RaumbelegungUpdateView(generic.UpdateView):
     model = models.Raumbelegung
     form_class = forms.RaumbelegungForm
     pk_url_kwarg = "pk"
+
+class RaumbelegungSearch(generic.edit.FormView):
+    template_name = "search.html"
+    form_class = forms.RaumSearchForm
+    success_url = "/room/room/Raum/"
+    
 
 
