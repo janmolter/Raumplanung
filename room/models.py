@@ -35,7 +35,7 @@ class Zeitraum(models.Model):
         pass
 
     def __str__(self):
-        return str(self.pk)
+        return f'{self.Datum} Zeitraum von {self.StartTime} bis {self.EndTime} '
 
     def get_absolute_url(self):
         return reverse("room_Zeitraum_detail", args=(self.pk,))
@@ -66,16 +66,15 @@ class Raumbelegung(models.Model):
 
 class Buchung(models.Model):
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
-    room = models.ForeignKey(Raum, on_delete = models.CASCADE)
-    check_in = models.ManyToManyField(Zeitraum)
-   
-   
+    User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
+    Room = models.ForeignKey(Raum, on_delete = models.CASCADE)
+    Check_in = models.ManyToManyField(Zeitraum)
+
     class Meta:
         pass
 
     def __str__(self):
-        return f'{self.user} hat {self.room} von {self.check_in} bis  gebucht'
+        return f'{self.User} hat {self.Room} am {self.Check_in} gebucht'
 
     def get_absolute_url(self):
         return reverse("room_Buchen_detail", args=(self.pk,))

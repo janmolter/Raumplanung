@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p>
+    <a class="btn btn-light" href="{% url 'room_Buchen_list' %}">
+    Alle Buchungen
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>User</td><td>{{ object.User }}</td></tr>
+    <tr><td>Room</td><td>{{ object.Room }}</td></tr>
+    <tr><td>Check_in</td><td>{{ object.Check_in }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+{% endblock %}

@@ -73,15 +73,15 @@ class BuchungsAdminForm(forms.ModelForm):
 class BuchungsAdmin(admin.ModelAdmin):
     form = BuchungsAdminForm
     list_display = [
-    "user",
-    "room",
+    "User",
+    "Room",
     "get_check_in",
     ]
     readonly_fields = [
 
     ]
     def get_check_in(self, obj):
-        return "\n".join([str(p) for p in obj.check_in.all()])    
+        return "\n".join([str(p) for p in obj.Check_in.all()])    
 
 
 
