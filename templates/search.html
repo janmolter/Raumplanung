@@ -1,5 +1,17 @@
 {% extends "base.html" %}
+{%load bootstrap%}
 
 {% block head %}
 Suchen
+{% endblock %}
+
+
+{% block content %}
+<form role="form" action="/room/room/suchen/result">
+    <legend>Suche</legend>
+    {{ form|bootstrap }}
+    <div class="form-group">
+      <button type="Submit" class="btn btn-primary">Suchen</button>
+    </div>
+</form>
 {% endblock %}

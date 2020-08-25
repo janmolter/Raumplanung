@@ -34,6 +34,21 @@ class RaumbelegungForm(forms.ModelForm):
             "Belegungsgrund",
         ]
 
+
+
+class RaumSearchForm(forms.ModelForm):
+    Raumnummer = forms.CharField(max_length=32, required=False)
+    Anzahl_Sitzplaetze = forms.CharField(max_length=32, required=False)
+    
+
+    class Meta:
+        model = models.Raum
+        fields = [
+            "Raumnummer",
+            "Anzahl_Sitzplaetze",
+           
+        ]
+
 class BuchungForm(forms.ModelForm):
 
     def __init__(self,*args, **kwargs):
@@ -47,3 +62,4 @@ class BuchungForm(forms.ModelForm):
     class Meta:
         model = models.Buchung
         fields = "__all__"
+

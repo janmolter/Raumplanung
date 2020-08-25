@@ -3,6 +3,10 @@ from . import models
 from . import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
+
+from .filters import RaumFilter
+from django_filters.views import FilterView
+
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
@@ -11,8 +15,20 @@ from django.utils.decorators import method_decorator
 class RaumListView(generic.ListView):
     model = models.Raum
     form_class = forms.RaumForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = RaumFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
+class RaumSearchResultView(FilterView):
+    model = models.Raum
+    template_name = "room/Raum_list.html"
+
+
     
 @method_decorator(login_required(login_url='/login/'),name='dispatch')
+
 class RaumCreateView(generic.CreateView):
     model = models.Raum
     form_class = forms.RaumForm
@@ -69,6 +85,12 @@ class RaumbelegungUpdateView(generic.UpdateView):
     model = models.Raumbelegung
     form_class = forms.RaumbelegungForm
     pk_url_kwarg = "pk"
+
+class RaumbelegungSearch(generic.edit.FormView):
+    template_name = "search.html"
+    form_class = forms.RaumSearchForm
+    success_url = "/room/room/Raum/"
+    
 
 
 
