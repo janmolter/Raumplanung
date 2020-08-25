@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 {% block head %}
-Raum list
+Raum Liste
 {% endblock %}
 {% block content %}
 {% for object in object_list %}
@@ -11,5 +11,5 @@ Raum list
 
 
 {% endfor %}
-<div><a class="btn btn-primary" href="{% url 'room_Raum_create' %}">Create a new Raum</a></div>
+<div><a class="btn btn-primary" href="{% url 'room_Raum_create' %}">Neuen Raum anlegen</a></div>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.conf import settings
+from django.core.exceptions import ValidationError
 
 class Raum(models.Model):
 
@@ -44,6 +45,7 @@ class Zeitraum(models.Model):
         return reverse("room_Zeitraum_update", args=(self.pk,))
 
 
+
 class Raumbelegung(models.Model):
 
     # Fields
@@ -78,5 +80,6 @@ class Buchung(models.Model):
 
     def get_absolute_url(self):
         return reverse("room_Buchen_detail", args=(self.pk,))
+    
 
 

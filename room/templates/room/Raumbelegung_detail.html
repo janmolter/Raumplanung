@@ -1,6 +1,9 @@
 
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+Raumbelegungsdetails
+{% endblock %}
 {% block content %}
     
 <p>
@@ -13,6 +16,6 @@
     <tr><td>Belegt</td><td>{{ object.Belegt }}</td></tr>
     <tr><td>Belegungsgrund</td><td>{{ object.Belegungsgrund }}</td></tr>
 </table>
-<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Bearbeiten</a>
 
 {% endblock %}

@@ -5,8 +5,13 @@ Startseite
 {% endblock %}
 
 {% block content %}
-<div class="m-2"><h4>room</h4></div>
-<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raum_list' %}">Raum Listing</a></div>
-<div class="m-2"><a class="btn btn-light" href="{% url 'room_Zeitraum_list' %}">Zeitraum Listing</a></div>
-<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raumbelegung_list' %}">Raumbelegung Listing</a></div>
+<div class="m-2"><h4>Herzlich Willkommen in der Raumverwaltung</h4></div>
+
+
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raum_list' %}">Übersicht aller Verfügbaren Räume</a>
+
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Zeitraum_list' %}">Übersicht aller buchbaren Voprlesungszeiträume</a>
+
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raumbelegung_list' %}">Übersicht der Aktuellen Raumbelegungen</a></div>
+	
 {% endblock %}

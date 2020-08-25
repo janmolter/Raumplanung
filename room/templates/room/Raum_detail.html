@@ -1,6 +1,9 @@
 
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+Raumdetails
+{% endblock %}
 {% block content %}
  {% for object in object_list %}   
   <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
@@ -25,6 +28,6 @@
     <tr><td>Beamer</td><td>{{ object.Beamer }}</td></tr>
     <tr><td>Whiteboard</td><td>{{ object.Whiteboard }}</td></tr>
 </table>
-<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Bearbeiten</a>
 
 {% endblock %}
