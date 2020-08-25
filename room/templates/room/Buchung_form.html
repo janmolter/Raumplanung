@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags%}
+{% block head %}
+Buchung
+{% endblock %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'room_Buchen_list' %}">
+    Alle Buchungen
+    </a>
+</p>
+    
+
+
+
+
+
+
+
+  {%crispy form%}
+
+
+
+
+{% endblock %}

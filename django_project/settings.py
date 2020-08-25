@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'room',
     'django_filters',
     'bootstrapform'
+
 ]
 
 

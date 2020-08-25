@@ -1,6 +1,9 @@
 
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+Zeitraumdetails
+{% endblock %}
 {% block content %}
     
 <p>
@@ -15,6 +18,6 @@
     <tr><td>Datum</td><td>{{ object.Datum }}</td></tr>
     <tr><td>StartTime</td><td>{{ object.StartTime }}</td></tr>
 </table>
-<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Bearbeiten</a>
 
 {% endblock %}
