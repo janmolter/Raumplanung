@@ -28,7 +28,7 @@ urlpatterns = (
     path("room/buchen/", TemplateView.as_view(template_name='booking.html'), name='booking'),
     path("room/Kalender/",TemplateView.as_view(template_name='calender.html'), name='calender'), 
     path("room/suchen/",views.RaumbelegungSearch.as_view(), name='search'),
-    path("room/suchen/result", views.RaumSearchResultView.as_view(), name='search_result')
+    path("room/suchen/result", views.RaumSearchResultView.as_view(), name='search_result'),
 
     path("room/Buchen/", views.BuchungListView.as_view(), name="room_Buchen_list"),
     path("room/Buchen/create/", views.BuchungCreateView.as_view(), name="room_Buchen_create"),

@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 class Raum(models.Model):
 
     # Fields
-    Raumnummer = models.CharField(max_length=255)
+    Raumnummer = models.CharField(unique=True,max_length=255)
     Anzahl_Sitzplaetze = models.IntegerField()
     Beamer = models.BooleanField()
     Whiteboard = models.BooleanField()
@@ -68,7 +68,7 @@ class Raumbelegung(models.Model):
 
 class Buchung(models.Model):
 
-    User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
+    User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE,unique=True)
     Room = models.ForeignKey(Raum, on_delete = models.CASCADE)
     Check_in = models.ManyToManyField(Zeitraum)
 

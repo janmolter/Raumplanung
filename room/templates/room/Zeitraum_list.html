@@ -5,7 +5,17 @@ Zeiträume
 {% endblock %}
 {% block content %}
 {% for object in object_list %}
-  <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
+<table class="table">
+
+  <colgroup>
+    <col style="background-color: #FFFFFF">
+    <col span="2">
+  </colgroup>
+     <tbody>
+ 		<tr><td> <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div></td></tr>
+     </tbody>
+</table>
+
 {% endfor %}
 <div><a class="btn btn-primary" href="{% url 'room_Zeitraum_create' %}">Neuen Zeitraum anlegen</a></div>
 {% endblock %}

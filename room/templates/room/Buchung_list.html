@@ -5,9 +5,16 @@ Raum buchen
 {% block content %}
 {% for object in object_list %}
 
+<table class="table">
 
-  <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
-
+  <colgroup>
+    <col style="background-color: #FFFFFF">
+    <col span="2">
+  </colgroup>
+     <tbody>
+ 		<tr><td> <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div></td></tr>
+     </tbody>
+</table>
 
 {% endfor %}
 <div><a class="btn btn-primary" href="{% url 'room_Buchen_create' %}">Neue Buchung durchführen</a></div>
