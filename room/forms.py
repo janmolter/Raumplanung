@@ -47,6 +47,7 @@ class RaumSearchForm(forms.ModelForm):
         fields = [
             "Raumnummer",
             "Anzahl_Sitzplaetze",
+            
 
            
         ]
@@ -57,7 +58,7 @@ class BuchungForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = "post"
-        self.helper.add_input(Submit("submit","Save"))
+        self.helper.add_input(Submit("submit","Speichern"))
 
 
 

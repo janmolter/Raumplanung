@@ -36,7 +36,7 @@ class Zeitraum(models.Model):
         pass
 
     def __str__(self):
-        return f'{self.Datum} Zeitraum von {self.StartTime} bis {self.EndTime} '
+        return f'Zeitraum: {self.StartTime} -- Dauer: 90 Minuten  '
 
     def get_absolute_url(self):
         return reverse("room_Zeitraum_detail", args=(self.pk,))
@@ -77,10 +77,11 @@ class Buchung(models.Model):
         pass
 
     def __str__(self):
-        return f'{self.User} hat {self.Room} am {self.Check_in} gebucht'
+        return f'{self.User} hat {self.Room} für den {self.Check_in.Datum} um {self.Check_in.Vorlesungszeit} für 90 Minuten gebucht'
 
     def get_absolute_url(self):
         return reverse("room_Buchen_detail", args=(self.pk,))
     
+
 
 
