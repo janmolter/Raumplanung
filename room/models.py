@@ -68,11 +68,12 @@ class Raumbelegung(models.Model):
 
 class Buchung(models.Model):
 
-    User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE,unique=True)
-    Room = models.ForeignKey(Raum, on_delete = models.CASCADE)
-    Check_in = models.ManyToManyField(Zeitraum)
+    User = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE,unique=True, blank=True, null=True)
+    Room = models.ForeignKey(Raum, on_delete = models.CASCADE,blank=True, null=True)
+    Check_in = models.ForeignKey(Zeitraum,  on_delete = models.CASCADE, blank=True, null=True)
 
     class Meta:
+        unique_together = ['Room', 'Check_in']
         pass
 
     def __str__(self):

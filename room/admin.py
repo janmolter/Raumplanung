@@ -75,13 +75,12 @@ class BuchungsAdmin(admin.ModelAdmin):
     list_display = [
     "User",
     "Room",
-    "get_check_in",
+    "Check_in",
     ]
     readonly_fields = [
 
     ]
-    def get_check_in(self, obj):
-        return "\n".join([str(p) for p in obj.Check_in.all()])    
+   
 
 
 

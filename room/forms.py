@@ -38,8 +38,8 @@ class RaumbelegungForm(forms.ModelForm):
 
 class RaumSearchForm(forms.ModelForm):
     Raumnummer = forms.CharField(max_length=32, required=False)
-    Anzahl_Sitzplaetze = forms.CharField(max_length=32, required=False)
-    
+    Anzahl_Sitzplaetze = forms.IntegerField(required=False)
+
     
 
     class Meta:
@@ -47,6 +47,7 @@ class RaumSearchForm(forms.ModelForm):
         fields = [
             "Raumnummer",
             "Anzahl_Sitzplaetze",
+
            
         ]
 
