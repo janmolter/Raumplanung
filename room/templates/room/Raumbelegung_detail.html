@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+Raumbelegungsdetails
+{% endblock %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'room_Raumbelegung_list' %}">
+    Raumbelegung Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Belegt</td><td>{{ object.Belegt }}</td></tr>
+    <tr><td>Belegungsgrund</td><td>{{ object.Belegungsgrund }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Bearbeiten</a>
+
+{% endblock %}

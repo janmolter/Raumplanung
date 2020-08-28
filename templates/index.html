@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+Startseite
+{% endblock %}
+
+{% block content %}
+<div class="m-2"><h4>Herzlich Willkommen in der Raumverwaltung</h4></div>
+
+
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Raum_list' %}">Übersicht aller Verfügbaren Räume</a>
+
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Zeitraum_list' %}">Übersicht aller buchbaren Vorlesungszeiträume</a>
+
+<div class="m-2"><a class="btn btn-light" href="{% url 'room_Buchen_list' %}">Übersicht der Aktuellen Raumbelegungen</a></div>
+	
+{% endblock %}

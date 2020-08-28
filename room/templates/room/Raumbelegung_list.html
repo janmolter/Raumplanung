@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block head %}
+Aktuelle Raumbelegungen
+{% endblock %}
+{% block content %}
+{% for object in object_list %}
+  <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
+{% endfor %}
+<div><a class="btn btn-primary" href="{% url 'room_Raumbelegung_create' %}">Neue Raumbelegung anlegen</a></div>
+{% endblock %}
